@@ -1,4 +1,5 @@
 import { getDictionary } from "@/app/[lang]/dictonaries";
+import Modal from "@/components/Modal";
 import PhotoDetails from "@/components/PhotoDetails";
 
 export default async function SinglePhotoPage({ params: { photoId, lang } }) {
@@ -8,7 +9,9 @@ export default async function SinglePhotoPage({ params: { photoId, lang } }) {
   const dictonary = await getDictionary(lang);
   return (
     <>
-      <PhotoDetails photo={photo} dictonary={dictonary} />
+      <Modal>
+        <PhotoDetails photo={photo} dictonary={dictonary} />
+      </Modal>
     </>
   );
 }
