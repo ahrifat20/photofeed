@@ -38,6 +38,15 @@
 //   ],
 // };
 
+// export const config = {
+//   matcher: [
+//     // Skip all internal paths (_next, assets, api)
+//     "/((?!api|assets|.*\\..*|_next).*)",
+//     // Optional: only run on root (/) URL
+//     // '/'
+//   ],
+// };
+
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { NextResponse } from "next/server";
