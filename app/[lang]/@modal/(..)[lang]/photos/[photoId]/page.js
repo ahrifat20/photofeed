@@ -1,6 +1,5 @@
-import { getDictionary } from "@/app/[lang]/dictonaries";
-import Modal from "@/components/Modal";
 import PhotoDetails from "@/components/PhotoDetails";
+import { getDictionary } from "../../dictonaries";
 
 export default async function SinglePhotoPage({ params: { photoId, lang } }) {
   const response = await fetch(`${process.env.BASE_API_URL}/photos/${photoId}`);
@@ -8,8 +7,8 @@ export default async function SinglePhotoPage({ params: { photoId, lang } }) {
 
   const dictonary = await getDictionary(lang);
   return (
-    <Modal>
+    <>
       <PhotoDetails photo={photo} dictonary={dictonary} />
-    </Modal>
+    </>
   );
 }
